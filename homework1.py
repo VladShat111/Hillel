@@ -9,8 +9,8 @@ def calculator(x, y, z):
         if z == "+":
             if x and y in "0123456789":
                 print(int(x) + int(y))
-            elif x or y not in "0123456789":
-                print(str(x) + str(y))
+            else:
+                print(x + y)
         elif z == "-":
             print(int(x) - int(y))
         elif z == "*":
@@ -20,7 +20,7 @@ def calculator(x, y, z):
         elif z == "//":
             print(int(x) // int(y))
         elif z == "%":
-            print(int(x % y))
+            print(int(x) % int(y))
         else:
             return None
     except ZeroDivisionError:
