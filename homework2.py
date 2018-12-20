@@ -8,7 +8,7 @@ while Exit != 0:
     valid_numbers = "0123456789"
 
     if c not in valid_operation:
-        print("Error. Invalid symbol")
+        print("Error. Invalid operation")
 
 
     def calculator(x, y, z):
