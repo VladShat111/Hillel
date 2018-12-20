@@ -5,6 +5,7 @@ while Exit != 0:
     c = input("Enter operation: ")
 
     valid_operation = "+-/*//%"
+    valid_numbers = "0123456789"
 
     if c not in valid_operation:
         print("Error. Invalid symbol")
@@ -13,7 +14,7 @@ while Exit != 0:
     def calculator(x, y, z):
         try:
             if z == "+":
-                if x and y in "0123456789":
+                if x and y in valid_numbers:
                     print(int(x) + int(y))
                 else:
                     print(x + y)
