@@ -4,6 +4,11 @@ while Exit != 0:
     b = input("Enter second number or string: ")
     c = input("Enter action symbol: ")
 
+    valid_symbol = "+-/*//%"
+
+    if c not in valid_symbol:
+        print("Error. Invalid symbol")
+        #break
 
     def calculator(x, y, z):
         try:
@@ -13,15 +18,15 @@ while Exit != 0:
                 else:
                     print(x + y)
             elif z == "-":
-                print(int(x) - int(y))
+                print(float(x) - float(y))
             elif z == "*":
-                print(int(x) * int(y))
+                print(float(x) * float(y))
             elif z == "/":
-                print(int(x) / int(y))
+                print(float(x) / float(y))
             elif z == "//":
-                print(int(x) // int(y))
+                print(float(x) // float(y))
             elif z == "%":
-                print(int(x) % int(y))
+                print(float(x) % float(y))
             else:
                 return None
         except ZeroDivisionError:
