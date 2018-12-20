@@ -2,13 +2,13 @@ Exit = None
 while Exit != 0:
     a = input("Enter first number or string: ")
     b = input("Enter second number or string: ")
-    c = input("Enter action symbol: ")
+    c = input("Enter operation: ")
 
-    valid_symbol = "+-/*//%"
+    valid_operation = "+-/*//%"
 
-    if c not in valid_symbol:
+    if c not in valid_operation:
         print("Error. Invalid symbol")
-        #break
+
 
     def calculator(x, y, z):
         try:
@@ -28,9 +28,11 @@ while Exit != 0:
             elif z == "%":
                 print(float(x) % float(y))
             else:
-                return None
+                return False
         except ZeroDivisionError:
             print("Error: Go to school :) _zero_division_")
+        except ValueError:
+            print("Error. Check your entering value  For string you can only use '+' operation.")
 
 
     calculator(a, b, c)
