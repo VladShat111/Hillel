@@ -1,5 +1,5 @@
-Exit = None
-while Exit != 0:
+out = None
+while out != 0:
     a = input("Enter first number or string: ")
     b = input("Enter second number or string: ")
     c = input("Enter operation: ")
@@ -37,4 +37,4 @@ while Exit != 0:
 
 
     calculator(a, b, c)
-    Exit = int(input("Enter '1' to continue. Otherwise enter 0 to exit: "))
+    out = int(input("Enter '1' to continue. Otherwise enter 0 to exit: "))
