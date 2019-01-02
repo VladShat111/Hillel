@@ -25,7 +25,7 @@ while out != 0:
                     if s in valid_operation:
                         return s
                 except Exception as e:
-                    print("Error: {} ", e)
+                    print("Error: use only valid operation: {} ".format(valid_operation), e)
         else:
             raise Exception("Please string")
 
