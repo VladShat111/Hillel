@@ -10,7 +10,7 @@ while out != 0:
                     i = float(input("{}".format(value)))
                     return i
                 except Exception as e:
-                    print("Error: ", e)
+                    print("Error: you must use only numbers, ", e)
         else:
             raise Exception("Please integer")
 
@@ -25,7 +25,7 @@ while out != 0:
                     if s in valid_operation:
                         return s
                 except Exception as e:
-                    print("Error: ", e)
+                    print("Error: {} ", e)
         else:
             raise Exception("Please string")
 
@@ -38,33 +38,47 @@ while out != 0:
 
 
 
+
+
     #valid_numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
+    def division_check(first_number, second_number, operation):
 
-    def calculator(first_number_or_string, second_number_or_string, operation):
+        try:
+            if operation == "/":
+                result = first_number / second_number
+                print(result)
+            elif operation == "//":
+                result = first_number // second_number
+                print(result)
+            elif operation == "%":
+                result = first_number % second_number
+                print(result)
+        except ZeroDivisionError as zde:
+            print("Error: ", zde)
+        except Exception as e:
+            print("Error: ", e)
 
-        if operation == "+":
-            result = first_number_or_string + second_number_or_string
-            print(result)
-        elif operation == "-":
-            result = first_number_or_string - second_number_or_string
-            print(result)
-        elif operation == "*":
-            result = first_number_or_string * second_number_or_string
-            print(result)
-        elif operation == "/":
-            result = first_number_or_string / second_number_or_string
-            print(result)
-        elif operation == "//":
-            result = first_number_or_string // second_number_or_string
-            print(result)
-        elif operation == "%":
-            result = first_number_or_string % second_number_or_string
-            print(result)
-        else:
-            return False
+    division_check(first_checked_value, second_checked_value, op_checked_value)
 
-    calculator(first_checked_value, second_checked_value, op_checked_value)
+
+    def calculator_main(first_number, second_number, operation):
+        try:
+            if operation == "+":
+                result = first_number + second_number
+                print(result)
+            elif operation == "-":
+                result = first_number - second_number
+                print(result)
+            elif operation == "*":
+                result = first_number * second_number
+                print(result)
+            else:
+                return False
+        except Exception as e:
+            print("Error: ", e)
+
+    calculator_main(first_checked_value, second_checked_value, op_checked_value)
 
     out = int(input("Enter '1' to continue. Otherwise enter 0 to exit: "))
