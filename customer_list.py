@@ -7,6 +7,18 @@ list_of_customers = {
 }
 
 
+
+def person_register(key_register, value):
+
+    x = list_of_customers.setdefault(key_register, value)
+    if x:
+        print("Register was success", x)
+
+    else:
+        print("something went wrong!")
+
+
+
 def find_person(value):
     x = list_of_customers.get(value)
     if x:
@@ -16,13 +28,7 @@ def find_person(value):
         print(value, "not in the list!")
 
 
-def person_register(key_register, *args,):
-    x = list_of_customers.setdefault(key_register, *args)
-    if x:
-        print("Register was success", x)
-        list_of_customers.update()
-    else:
-        print("Something gos wrong!")
+
 
 def of_choice(value):
     try:
@@ -31,8 +37,8 @@ def of_choice(value):
             find_person(key_to_find)
         elif value == 'no':
             key_for_register = input("Enter your name: ")
-            value_for_register = input("Enter your email and phone number: ")
-            person_register(key_for_register, value_for_register)
+            value_register = input("Enter your email and phone number: ")
+            person_register(key_for_register, value_register)
 
         else:
             print("Unknown choice")
@@ -41,4 +47,5 @@ def of_choice(value):
 
 
 of_choice(choice)
+print(list_of_customers.items())
 
