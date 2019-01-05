@@ -17,7 +17,7 @@ def person_register(key_register, value):
     else:
         print("something went wrong!")
 
-
+    list_of_customers.update(x)
 
 def find_person(value):
     x = list_of_customers.get(value)
@@ -26,6 +26,7 @@ def find_person(value):
 
     else:
         print(value, "not in the list!")
+
 
 
 
