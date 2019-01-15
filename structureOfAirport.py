@@ -14,6 +14,7 @@ class Airport:
 
 
     def online_register(self):
+        print('<<< Online registration >>>')
         firstname = input('Enter your first name for online registration')
         secondname = input('Enter your second name for online registration')
         if firstname == self.first_name and secondname == self.second_name:
@@ -24,6 +25,7 @@ class Airport:
 
 
     def check_in(self):
+        print('<<< Check-in >>>')
         passport = input('Please, enter your number and series of passport')
         if passport == self.passport_series_number:
             print('Here is your boarding pass. I may go to the passport control')
@@ -33,6 +35,7 @@ class Airport:
 
 
     def passport_control(self):
+        print('<<< Passport control >>>')
         firstname = input("Enter the first name")
         secondname = input("Enter the second name")
         if firstname == self.first_name and secondname == self.second_name:
@@ -41,18 +44,20 @@ class Airport:
             print("Please, check your data")
 
         if self.count_of_baggage <= self.baggage_max_weight:
-            print("Your baggage is in order! You may go to the departure of lounge")
+            print("Your baggage is in order! You may go to the departure lounge")
         else:
             print("Sorry, you must pay for extra weight!")
 
 
 
     def departure_lounge(self):
+        print('<<< Departure lounge >>>')
         print('Hi {}. You can go to duty free and have relax. After a while you must go to the gate'.format(self.first_name + '' + self.second_name))
 
 
 
     def gate(self):
+        print('<<< Gate >>>')
         passport = input('Please, enter your number and series of passport')
         if passport == self.passport_series_number:
             print('You can go to boarding')
@@ -62,16 +67,14 @@ class Airport:
 
 
     def boarding(self):
+        print('<<< Boarding >>>')
         print('Instruction from flight attendants')
         print('Greetings from ship`s commander. And information about the {}.'.format(self.country))
 
 
 
-
-
-
-
     def board_the_plane(self):
+        print('<<< Board the plane >>>')
         if self.seat_place >= Airport.count_of_passengers:
             return 'Take of'
 
